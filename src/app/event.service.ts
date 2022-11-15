@@ -12,7 +12,7 @@ export class EventService {
       title: "JOE VERAS EN CONCIERTO ! BALTIMORE MARYLAND",
       performing: "JOE VERAS",
       imgURL: "https://d3m2ck9isazgad.cloudfront.net/w652/eventFlyer/1665166120481-76e387468cf243155b1193ad.jpeg",
-      videoURL: "https://youtu.be/GD9wKjHEJbE",
+      videoURL: "https://www.youtube.com/embed/GD9wKjHEJbE",
       venue: "VIP ROOM Baltimore 3919 EAST LOMBARD STREET Baltimore Maryland 21224",
       price: 50.00,
       favorite: false,

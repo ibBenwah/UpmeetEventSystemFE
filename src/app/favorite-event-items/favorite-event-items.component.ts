@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { Event } from '../event';
 
 @Component({
   selector: 'app-favorite-event-items',
@@ -11,5 +12,7 @@ export class FavoriteEventItemsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  // toggleFavorite():void {
+  //   this.
+  // }
 }
