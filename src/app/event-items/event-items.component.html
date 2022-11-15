@@ -1,4 +1,23 @@
-<div *ngFor="let event in allEvents">
-    <h1>Event</h1>
+<!-- 
+event
+performing
+date/time
+address
+details
+video
+image
+event info 
+-->
 
+<div *ngFor="let e of event">
+    <h1>{{e.title}}</h1>
+    <h3>{{e.performing}}</h3>
+    <h3>{{e.eventDatetime}}</h3>
+    <h3>{{e.contactInfo}}</h3>
+    <h3>{{e.description}}</h3>
+    <video src= {{e.videoURL}}>
+    <h3>{{e.imgURL}}</h3>
+    <h3>{{e.contactInfo}}</h3>
 </div>
+
+
