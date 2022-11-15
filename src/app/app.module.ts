@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventItemsComponent } from './event-items/event-items.component';
 import { FavoriteEventItemsComponent } from './favorite-event-items/favorite-event-items.component';
+import { EventListingsComponent } from './event-listings/event-listings.component';
+import { EventsNavComponent } from './events-nav/events-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventItemsComponent,
-    FavoriteEventItemsComponent
+    FavoriteEventItemsComponent,
+    EventListingsComponent,
+    EventsNavComponent
   ],
   imports: [
     BrowserModule,
