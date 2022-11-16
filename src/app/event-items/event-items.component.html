@@ -15,9 +15,8 @@ event info
     <h3>{{e.eventDatetime}}</h3>
     <h3>{{e.contactInfo}}</h3>
     <h3>{{e.description}}</h3>
-    <a href={{e.videoURL}}>{{e.videoURL}}</a>
-    <!-- <iframe width="907" height="510" src={{e.videoURL}} title={{e.title}} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-    <h4><a href={{e.imgURL}}>Image URL</a></h4>
+    <iframe width="907" height="510" src= {{e.videoURL}}  title={{e.title}} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <img src={{e.imgURL}} alt={{e.title}}>
     <h3>{{e.contactInfo}}</h3>
     <h4>{{e.favorite}}</h4>
 </div>
