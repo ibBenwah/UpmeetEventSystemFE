@@ -1,5 +1,5 @@
 export interface FavoritedEvent {
+    eventId: number;
     userId: string;
-    event: Event;
 }
 

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class FavoritedEventService {
 
-  backendURL: string = 'https://localhost:7157/api';
+  backendURL: string = 'https://localhost:7295/api';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,4 +22,7 @@ export class FavoritedEventService {
   deleteEvent = (id: number): Observable<void> => {
     return this.httpClient.delete<void>(this.backendURL + "/event/" + id);
   }
+
+  
+  
 }

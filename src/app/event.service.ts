@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { Event } from './event';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { FavoritedEvent } from './favorited-event';
 @Injectable({
   providedIn: 'root'
 })
 export class EventService {
+  [x: string]: any;
   // events: Event[] = [
   //   {
   //     id: 1,
@@ -28,19 +30,29 @@ export class EventService {
   //   return this.events
   // }
 
-  backendURL: string = 'https://localhost:7157/api';
+  backendURL: string = 'https://localhost:7295/api/Events/';
+  //                    https://localhost:7295/api/Events/events
 
   constructor(private httpClient: HttpClient) { }
-
-  getOEvent = (): Observable<Event[]> => {
-    return this.httpClient.get<Event[]>(this.backendURL + "/event");
+  getOfEvent = (): Observable<Event[]> => {
+    return this.httpClient.get<Event[]>(this.backendURL + "events");
   }
 
   addNewEvent = (event: Event): Observable<Event> => {
-    return this.httpClient.post<Event>(this.backendURL + "/event", event);
+    return this.httpClient.post<Event>(this.backendURL + "/Events", event);
   }
 
   deleteEvent = (id: number): Observable<void> => {
-    return this.httpClient.delete<void>(this.backendURL + "/event/" + id);
+    return this.httpClient.delete<void>(this.backendURL + "/Events/" + id);
   }
+
+  bookmarkEvent = (id: number, userId: string): Observable<FavoritedEvent> => {
+    return this.httpClient.get<FavoritedEvent>(this.backendURL + "/bookmark/");
+  }
+
+  userId: string = "admin";
+
+  // addNewOrder = (order: Order): Observable<Order> => {
+  //   return this.httpClient.post<Order>(this.backendURL + "/orders", order);
+  // }
 }
