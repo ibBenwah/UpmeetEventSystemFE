@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Event } from './event';
 import { Observable } from 'rxjs';
+import { FavoritedEvent } from './favorited-event';
+import { EventService } from './event.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,17 +13,22 @@ export class FavoritedEventService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getOEvent = (): Observable<Event[]> => {
-    return this.httpClient.get<Event[]>(this.backendURL + "/event");
+  getFavorites = (): Observable<FavoritedEvent[]> => {
+    return this.httpClient.get<FavoritedEvent[]>(this.backendURL + "/FavoritedEvents");
   }
 
-  addNewEvent = (event: Event): Observable<Event> => {
-    return this.httpClient.post<Event>(this.backendURL + "/event", event);
-  }
+  // getEventTranslation = (): Observable<EventService[]> => {
+  //   return this.httpClient.get<EventService[]>(this.backendURL + "events");
+  // }
 
-  deleteEvent = (id: number): Observable<void> => {
-    return this.httpClient.delete<void>(this.backendURL + "/event/" + id);
-  }
+  // addNewEvent = (event: Event): Observable<Event> => {
+  //   return this.httpClient.post<Event>(this.backendURL + "/event", event);
+  // }
+
+  // deleteEvent = (id: number): Observable<void> => {
+  //   return this.httpClient.delete<void>(this.backendURL + "/event/" + id);
+  //   //                            https://localhost:7295/api/FavoritedEvents
+  //}
 
   
   

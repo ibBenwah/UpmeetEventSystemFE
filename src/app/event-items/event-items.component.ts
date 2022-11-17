@@ -15,6 +15,7 @@ export class EventItemsComponent implements OnInit {
   eventId: number = 0;
   userId: string = "";
   bookmark: FavoritedEvent = {} as FavoritedEvent;
+  favorite: boolean = true;
 
   event: Event[] = [];
   
@@ -27,5 +28,7 @@ export class EventItemsComponent implements OnInit {
   addFavorite  (eventId: number){
     this.service.bookmarkEvent(this.eventId, this.service.userId).subscribe(data => this.bookmark = data);
   }
- 
+  showEventDetail():void {
+    this.favorite=!this.favorite;
+  }
 }

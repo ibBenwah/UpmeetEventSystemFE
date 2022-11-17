@@ -1,1 +1,15 @@
-<button (click)="toggleFavorite()">{{favorite}} </button>
+<div *ngFor="let e of favoriteEvent">
+    <h3>{{e.userId}}</h3>
+    <h3>{{e.eventId}}</h3>
+    <!-- <h1>{{e.title}}</h1>
+    <h3>{{e.performing}}</h3>
+    <h3>{{e.eventDatetime}}</h3>
+    <h3>{{e.contactInfo}}</h3>
+    <h3>{{e.description}}</h3>
+    <img src={{e.imgURL}} alt={{e.title}}>
+    <a href={{e.videoURL}}> View event video!!</a>
+
+    <h3>{{e.contactInfo}}</h3>
+    <h4>{{e.favorite}}</h4>
+    -->
+    </div>

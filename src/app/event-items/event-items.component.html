@@ -8,19 +8,20 @@ video
 image
 event info 
 -->
-
+<hr>
 <div *ngFor="let e of event">
     <h1>{{e.title}}</h1>
+    <button (click)="addFavorite(e.id)">Favorite</button>
     <h3>{{e.performing}}</h3>
     <h3>{{e.eventDatetime}}</h3>
     <h3>{{e.contactInfo}}</h3>
     <h3>{{e.description}}</h3>
-    <iframe width="907" height="510" src= {{e.videoURL}}  title={{e.title}} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <img src={{e.imgURL}} alt={{e.title}}>
+    <a href={{e.videoURL}}> View event video!!</a>
+
     <h3>{{e.contactInfo}}</h3>
     <h4>{{e.favorite}}</h4>
-    <input type="name">
-    <button (click)="addFavorite(e.id)">Favorite</button>
+   
     </div>
 
 

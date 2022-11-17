@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Event } from '../event';
+import { FavoritedEvent } from '../favorited-event';
+import { FavoritedEventService } from '../favorited-event.service';
+
 
 @Component({
   selector: 'app-favorite-event-items',
@@ -7,13 +10,17 @@ import { Event } from '../event';
   styleUrls: ['./favorite-event-items.component.css']
 })
 export class FavoriteEventItemsComponent implements OnInit {
-  @Input() fav: Event = {} as Event;
-  favorite: boolean = true;
+  @Input() fav: FavoritedEvent = {} as FavoritedEvent;
+  favorite: boolean = false;
 
+  
+  favoriteEvent: FavoritedEvent[] = [];
+  
+  constructor(private favoriteService: FavoritedEventService) { }
+  
   ngOnInit(): void {
+    this.favoriteService.getFavorites().subscribe(data => this.favoriteEvent = data);
   }
-
-
 //Insert a toggle to true if the button pressed
 
   toggleFavorite():void {

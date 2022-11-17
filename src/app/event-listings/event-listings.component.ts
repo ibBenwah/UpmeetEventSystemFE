@@ -9,10 +9,11 @@ import { Event } from '../event';
 })
 export class EventListingsComponent implements OnInit {
   event: Event[] = [];
+  detail: boolean = true;
   constructor(private service: EventService) { }
 
   ngOnInit(): void {
     this.service.getOfEvent().subscribe(data => this.event = data);
   }
-
+  
 }
