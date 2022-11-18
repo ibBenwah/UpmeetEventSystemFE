@@ -1,21 +1,60 @@
-<!-- 
-event
-performing
-date/time
-address
-details
-video
-image
-event info 
--->
 
-<h1>Current Events</h1>
-<div *ngFor="let e of event">
-    <h5>{{e.title}}</h5>
-    <button >ton</button>
-    
-    
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<h1>Events List</h1>
+<table class="table table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Performing</th>
+      <th scope="col">Event Datetime</th>
+      <th scope="col">Video URL</th>
+      <th scope="col">IMG URL</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of event" class="table-danger">
+            <td>{{e.title}}</td>
+            <td>{{e.performing}}</td>
+            <td>{{e.eventDatetime}}</td>
+            <td> <a href= {{e.videoURL}} target="_blank"> Video of {{e.performing}}</a> </td>
+            <td> <img  src={{e.imgURL}} alt="">{{e.performing}}</td>
+      <td>
+        <button 
+        class="btn btn-primary"
+        (click)="displayEventItems(e.id)"
+      >
 
-</div>
+        View Event Details
+      </button>
+        <button
+          type="button"
+          [ngClass]="
+            e.favorite ? 'btn btn-warning' : 'btn btn-secondary'
+          "
+          (click)="toggleFavorite(e)"
+         >
+         <div *ngIf=" e.favorite; else elseOther">Favorited!</div>
+          <ng-template #elseOther> Favorite </ng-template>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<!-- <th scope="col">Contact Info</th>
+      <th scope="col">Description</th>
+      <th scope="col">Video URL</th>
+      <th scope="col">IMG URL</th>
+      <th scope="col">Contact Info</th>
+      <th scope="col">Favorite</th> -->
+
+
+
+
+
 
 

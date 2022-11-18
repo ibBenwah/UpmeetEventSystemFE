@@ -28,8 +28,22 @@ export class EventService {
   bookmarkEvent = (id: number, userId: string): Observable<FavoritedEvent> => {
     return this.httpClient.get<FavoritedEvent>(this.backendURL + "bookmark/" + id + "/" + userId);
   }
-  //                                    https://localhost:7295/api/Events/bookmark/3/Garret
+  
   userId: string = "admin";
+
+  eventIDUsing=0;
+  
+  eventBeingUsed(idEvent: number){
+   
+    this.eventIDUsing = idEvent;
+    return this.eventIDUsing;
+  
+}
+
+returnEventID(): number {
+  return this.eventIDUsing;
+}
+
 
   // addNewOrder = (order: Order): Observable<Order> => {
   //   return this.httpClient.post<Order>(this.backendURL + "/orders", order);
